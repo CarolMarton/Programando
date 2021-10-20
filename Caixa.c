@@ -1,84 +1,48 @@
-#include <stdio.h>
-#include <locale.h>
-#include <stdlib.h>
+//EXERCICIO 1 - CAIXA ELETRÔNICO
+#include<stdio.h>
+#include<stdlib.h>
 
-    float saldo = 0;
-    float val_dep = 0;
+    int main(){
 
-    int main (){
-        setlocale(LC_ALL, "");
+        float valor, desconto, total_desc, acrescimo, total_acres;
+        int  op_pagamento;
 
-            int op;
+            printf("\nDigite o valor a ser pago: ");
+            scanf("%f", &valor);
 
-                do {
-                    printf("\n  ESCOLHA UMA OPÇÃO: \n (1) CONSULTAR SALDO \n (2) DEPOSITAR UM VALOR \n (3) SACAR UM VALOR \n (4) SAIR \n");
-                    scanf("%d", &op);
+            printf("\n ESCOLHA UMA OPCAO DE PAGAMENTO: \n \n 1 - Dinheiro \n 2 - Debito \n 3 - Credito \n 4 - Sair \n\n");
+            scanf("%d", &op_pagamento);
 
-                    switch(op){
+                switch (op_pagamento)
+                {
+                    case 1:
+                            desconto = valor * 0.05;
+                            total_desc = valor - desconto;
+                            printf("\n O valor a ser pago no DINHEIRO e: %.2f \n DESCONTO de 5 porcento o total e de: %.2f", valor, total_desc);
 
-                        case 1:
-                                consulta();
-                        break;
+                    break;
 
-                        case 2:
-                                deposito();
-                        break;
+                    case 2:
+                            printf("\n O valor a ser pago no DEBITO e: %.2f", valor);
 
-                        case 3:
-                                sacar_valor();
-                        break;
+                    break;
 
-                        case 4:
-                            printf("\nSaindo...... Pressione enter");
-                        break;
-
-                        default:
-                            printf("\nOpção inválida!");
-                        break;
-                    }
-          } while (op != 4);
-
-        return 0;
-    }
+                    case 3:
+                            acrescimo = valor * 0.05;
+                            total_acres = acrescimo + valor;
+                            printf("\n O valor a ser pago no CREDITO e: %.2f \n ACRESCIMO de 5 porcento o total e de: %.2f", valor, total_acres);
+                    break;
 
 
-    consulta(){
-
-        printf("\nSeu saldo atual é: %.2f\n", saldo+val_dep);
-    }
+                    default:
+                            printf("\n Voce escolheu opcao 4 - SAIR \n");
 
 
-    deposito(){
-        float val_dep;
-            printf("\nQUAL VALOR DESEJA DEPOSITAR? ");
-            scanf("%f", &val_dep);
-
-            if (val_dep <= 0) {
-                printf("\nVALOR INVÁLIDO!");
-            }
-                else {
-                    printf("\n Depósito realizado com sucesso! \n Saldo atual: %.2f \n", val_dep+saldo);
                 }
-        }
-    sacar_valor(){
 
-        float valor_saque;
-        printf("Qual valor deseja sacar? ");
-        scanf("%f", &valor_saque);
 
-        if (valor_saque > saldo){
-            printf("\nSALDO INSUFICIENTE");
-        }
 
-        else
-            if (valor_saque <= 0){
-                printf("\nVOCÊ DEVE COLOCAR UM VALOR POSITIVO");
-            }
 
-            else {
-                saldo = valor_saque - saldo;
-                printf("\nVocê sacou: %.2f", valor_saque);
-                printf("\nSaldo atual: %.2f", saldo);
-            }
+
+    return 0;
     }
-
