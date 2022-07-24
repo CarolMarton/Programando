@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 	
-	//FunÁ„o para criar o arquivo.
+	//Fun√ß√£o para criar o arquivo.
 	FILE* AbreArquivo(){
     	//criando ponteiro do tipo FILE.
 		FILE *arquivo;
     	//comando que cria o arquivo e mostra o modo que quer abrir.
 		arquivo = fopen("entrada.txt", "w");
 			
-			//Se houver algum erro, o ponteiro apontar· para NULL
+			//Se houver algum erro, o ponteiro apontar√° para NULL
 		    if(arquivo==NULL)
 			{      
 		        printf("Nao foi possivel abrir o arquivo!");
@@ -18,7 +18,7 @@
 		return arquivo;
 	}
 
-	//FunÁ„o para fechar o arquivo
+	//Fun√ß√£o para fechar o arquivo
 	void FecharArquivo(FILE *arquivo){
 		//comando que fecha o arquivo.
 	    fclose(arquivo);
