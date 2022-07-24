@@ -1,5 +1,6 @@
 //Carol Marton
-//Exercicio 4
+//Exercicio 4 
+// Recebendo valores inteiros e alterando na saida.
 #include <stdio.h>
 
 	void swap (int *p1, int *p2, int *p3);
