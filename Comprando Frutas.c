@@ -1,5 +1,6 @@
 //Exercicio FRUTAS
-#include<stdio.h>
+// Exerci p
+ #include<stdio.h>
 
 #define valorAbacaxi 3
 #define valorCenoura 2
